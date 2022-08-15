@@ -32,6 +32,7 @@ export default function () {
 			<PageSelectorComponent
 				actionAdd={goAdd}
 				actionGeneric={goPage}
+				active={location.pathname.split('/')[1] || ''}
 				icons={[FaWallet, FaBell, FaPaperclip, FaUser]}
 				pages={['bills', 'news', 'reports', 'profile']}
 			/>
