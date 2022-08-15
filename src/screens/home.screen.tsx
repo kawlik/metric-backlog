@@ -8,7 +8,7 @@ export default function () {
 	const navigate = useNavigate();
 
 	// data:TopBarComponent
-	const topLabel = location.pathname.split('/')[1] || 'Welcome!';
+	const topLabel = location.pathname.split('/')[1] || 'Metric';
 
 	// actions:TopBarComponent
 	const goBack = () => navigate(-1);
@@ -32,6 +32,7 @@ export default function () {
 			<PageSelectorComponent
 				actionAdd={goAdd}
 				actionGeneric={goPage}
+				active={location.pathname.split('/')[1] || ''}
 				icons={[FaWallet, FaBell, FaPaperclip, FaUser]}
 				pages={['bills', 'news', 'reports', 'profile']}
 			/>
