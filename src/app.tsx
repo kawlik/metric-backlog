@@ -1,5 +1,5 @@
-import { Route, Routes } from 'react-router-dom';
-import { BillsPage, NewsPage, ProfilePage, ReportsPage, WelcomePage } from './pages/@';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import { BillsPage, NewsPage, ProfilePage, ReportsPage } from './pages/@';
 import { HomeScreen } from './screens/@';
 
 export default function () {
@@ -16,7 +16,7 @@ export default function () {
 				<Route path="reports" element={<ReportsPage />} />
 
 				{/* fallback */}
-				<Route path="*" element={<WelcomePage />} />
+				<Route path="*" element={<Navigate to='bills' />} />
 			</Route>
 		</Routes>
 	);
