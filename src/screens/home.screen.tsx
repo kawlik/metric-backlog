@@ -8,7 +8,7 @@ export default function () {
 	const navigate = useNavigate();
 
 	// data:TopBarComponent
-	const topLabel = location.pathname.split('/')[1] || 'Welcome!';
+	const topLabel = location.pathname.split('/')[1] || 'Metric';
 
 	// actions:TopBarComponent
 	const goBack = () => navigate(-1);

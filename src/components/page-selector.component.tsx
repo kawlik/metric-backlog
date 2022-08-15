@@ -17,6 +17,7 @@ export default function (props: {
 				action={() => props.actionGeneric(props.pages[0])}
 				icon={props.icons[0]}
 				label={props.pages[0]}
+                isActive={true}
 			/>
 			<ButtonIconLabelComponent
 				action={() => props.actionGeneric(props.pages[1])}
