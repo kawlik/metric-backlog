@@ -12,11 +12,9 @@ export default function (props: {
 	return (
 		<button
 			onClick={props.action}
-			className={`flex flex-1 flex-col gap-1 items-center overflow-x-hidden p-0.5 active:scale-95 ${
-				props?.isActive && 'text-green-500'
-			}`}
+			className="flex flex-1 flex-col gap-1 items-center overflow-x-hidden p-0.5 active:scale-95"
 		>
-			<props.icon />
+			<props.icon className={!!props?.isActive ? 'text-green-500' : ''} />
 			<span className="capitalize font-light text-sm text-center w-max">
 				{props.label}
 			</span>

@@ -7,16 +7,20 @@ export default function () {
 	const location = useLocation();
 	const navigate = useNavigate();
 
-	// data:TopBarComponent
-	const topLabel = location.pathname.split('/')[1] || 'Metric';
+	// data:PageSelectorComponent
+	const activePage = location.pathname.split('/')[1] || '';
 
-	// actions:TopBarComponent
-	const goBack = () => navigate(-1);
-	const goInfo = () => {};
+	// data:TopBarComponent
+	const topLabel = activePage || 'Metric';
+	const skipLeft = activePage === 'bills';
 
 	// actions:PageSelectorComponent
 	const goAdd = () => {};
 	const goPage = (page: string) => navigate(page);
+
+	// actions:TopBarComponent
+	const goBack = () => navigate(-1);
+	const goInfo = () => {};
 
 	// component layout
 	return (
@@ -27,12 +31,13 @@ export default function () {
 				iconL={FaArrowLeft}
 				iconR={FaInfo}
 				label={topLabel}
+				skipL={skipLeft}
 			/>
 			<Outlet />
 			<PageSelectorComponent
 				actionAdd={goAdd}
 				actionGeneric={goPage}
-				active={location.pathname.split('/')[1] || ''}
+				active={activePage}
 				icons={[FaWallet, FaBell, FaPaperclip, FaUser]}
 				pages={['bills', 'news', 'reports', 'profile']}
 			/>

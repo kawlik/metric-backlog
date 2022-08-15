@@ -10,6 +10,7 @@ export default function (props: {
 	pages: [string, string, string, string];
 }) {
 	// component logic
+	const isActive = (index: number) => !!props.pages[index]?.includes(props.active);
 
 	// component layout
 	return (
@@ -18,26 +19,26 @@ export default function (props: {
 				action={() => props.actionGeneric(props.pages[0])}
 				icon={props.icons[0]}
 				label={props.pages[0]}
-				isActive={props.pages[0].includes(props.active)}
+				isActive={isActive(0)}
 			/>
 			<ButtonIconLabelComponent
 				action={() => props.actionGeneric(props.pages[1])}
 				icon={props.icons[1]}
 				label={props.pages[1]}
-				isActive={props.pages[1].includes(props.active)}
+				isActive={isActive(1)}
 			/>
 			<ButtonIconExposedComponent action={props.actionAdd} icon={FaPlus} />
 			<ButtonIconLabelComponent
 				action={() => props.actionGeneric(props.pages[2])}
 				icon={props.icons[2]}
 				label={props.pages[2]}
-				isActive={props.pages[2].includes(props.active)}
+				isActive={isActive(2)}
 			/>
 			<ButtonIconLabelComponent
 				action={() => props.actionGeneric(props.pages[3])}
 				icon={props.icons[3]}
 				label={props.pages[3]}
-				isActive={props.pages[3].includes(props.active)}
+				isActive={isActive(3)}
 			/>
 		</footer>
 	);

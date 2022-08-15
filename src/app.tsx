@@ -14,10 +14,10 @@ export default function () {
 				<Route path="news" element={<NewsPage />} />
 				<Route path="profile" element={<ProfilePage />} />
 				<Route path="reports" element={<ReportsPage />} />
-
-				{/* fallback */}
-				<Route path="*" element={<Navigate to="bills" />} />
 			</Route>
+
+			{/* fallback */}
+			<Route path="*" element={<Navigate to="bills" />} />
 		</Routes>
 	);
 }
