@@ -16,7 +16,7 @@ export default function () {
 				<Route path="reports" element={<ReportsPage />} />
 
 				{/* fallback */}
-				<Route path="*" element={<Navigate to='bills' />} />
+				<Route path="*" element={<Navigate to="bills" />} />
 			</Route>
 		</Routes>
 	);
