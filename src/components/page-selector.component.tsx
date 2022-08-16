@@ -14,7 +14,7 @@ export default function (props: {
 
 	// component layout
 	return (
-		<footer className="bg-white gap-1 flex flex-nowrap justify-around p-3 pb-4 shadow-2xl z-30">
+		<footer className="bg-white gap-1 flex flex-nowrap justify-around p-3 pb-4 z-30">
 			<ButtonIconLabelComponent
 				action={() => props.actionGeneric(props.pages[0])}
 				icon={props.icons[0]}
