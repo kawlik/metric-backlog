@@ -12,7 +12,7 @@ export default function () {
 
 	// data:TopBarComponent
 	const topLabel = activePage || 'Metric';
-	const skipLeft = activePage === 'bills';
+	const skipLeft = true;
 
 	// actions:PageSelectorComponent
 	const goAdd = () => {};

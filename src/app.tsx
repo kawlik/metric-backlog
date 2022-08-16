@@ -8,6 +8,9 @@ export default function () {
 	// component layout
 	return (
 		<Routes>
+			{/* default fallback */}
+			<Route path="*" element={<Navigate to="bills" />} />
+
 			{/* home screen */}
 			<Route path="*" element={<HomeScreen />}>
 				<Route path="bills" element={<BillsPage />} />
@@ -15,9 +18,6 @@ export default function () {
 				<Route path="profile" element={<ProfilePage />} />
 				<Route path="reports" element={<ReportsPage />} />
 			</Route>
-
-			{/* fallback */}
-			<Route path="*" element={<Navigate to="bills" />} />
 		</Routes>
 	);
 }
