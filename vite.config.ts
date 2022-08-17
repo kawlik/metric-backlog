@@ -12,12 +12,12 @@ export default defineConfig({
 		VitePWA({
 			registerType: 'prompt',
 			manifest: {
-                name: 'metric',
+				name: 'metric',
 				short_name: 'metric',
 				description: 'Metric - PWA expense management app!',
 				theme_color: '#ffffff',
 				background_color: '#ffffff',
-                orientation: 'portrait',
+				orientation: 'portrait',
 				display: 'standalone',
 				icons: [
 					{
