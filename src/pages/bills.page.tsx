@@ -21,7 +21,7 @@ export default function () {
 
 	// initial update
 	useEffect(() => {
-		fetch('/mock/bills.json')
+		fetch('mock/bills.json')
 			.then((res) => res.json())
 			.then((res: BillType[]) => setBills(res));
 	}, []);
