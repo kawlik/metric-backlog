@@ -11,7 +11,7 @@ export default function (props: {
 
 	// component layout
 	return (
-		<button onClick={props.action} className="flex flex-1 flex-nowrap flex-row gap-2">
+		<button onClick={props.action} className="flex flex-nowrap flex-row gap-2">
 			<div className="backdrop-blur-lg bg-gray-400 bg-opacity-20 border-green-500 border-2 my-auto p-2 rounded-full">
 				<FaStar className="text-3xl text-green-500" />
 			</div>
