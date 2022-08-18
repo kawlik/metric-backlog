@@ -9,6 +9,7 @@ export default function (props: {
 	iconR: IconType;
 	label: string;
 	skipL?: boolean;
+	skipR?: boolean;
 }) {
 	// component logic
 
@@ -20,7 +21,10 @@ export default function (props: {
 				element={<ButtonIconComponent action={props.actionL} icon={props.iconL} />}
 			/>
 			<span className="capitalize my-auto text-lg font-semibold">{props.label}</span>
-			<ButtonIconComponent action={props.actionR} icon={props.iconR} />
+			<Collapse
+				collapse={!!props?.skipR}
+				element={<ButtonIconComponent action={props.actionR} icon={props.iconR} />}
+			/>
 		</header>
 	);
 }

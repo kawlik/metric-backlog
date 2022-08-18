@@ -1,7 +1,7 @@
 import { BillType } from '../types/@';
 import { BillListViewComponent } from './@';
 
-export default function (props: { bills: BillType[] }) {
+export default function (props: { action(billID: string): void; bills: BillType[] }) {
 	// component logic
 
 	// component layout
@@ -9,7 +9,7 @@ export default function (props: { bills: BillType[] }) {
 		<ul className="flex flex-1 flex-col gap-4">
 			{props.bills.map((bill) => (
 				<BillListViewComponent
-					action={() => {}}
+					action={() => props.action(bill.id)}
 					id={bill.id}
 					key={bill.id}
 					participants={bill.participants}

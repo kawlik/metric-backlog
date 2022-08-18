@@ -1,3 +1,4 @@
+export { default as BackgroundMessageComponent } from './background-message.component';
 export { default as BillListViewComponent } from './bill-list-view.component';
 export { default as BillsListComponent } from './bills-list.component';
 export { default as ButtonIconExposedComponent } from './button-icon-exposed.component';
