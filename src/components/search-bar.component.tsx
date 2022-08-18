@@ -5,7 +5,7 @@ export default function (props: { action(): void }) {
 	return (
 		<input
 			className="backdrop-blur-lg bg-gray-400 bg-opacity-20 px-4 py-3 rounded-md"
-			placeholder="&#128269; Search"
+			placeholder="🔍 Search"
 			type="text"
 		/>
 	);

@@ -1,6 +1,6 @@
 import { FaArrowLeft, FaInfo } from 'react-icons/fa';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { TopBarComponent } from '../components/@';
+import { BillInputComponent, TopBarComponent } from '../components/@';
 
 export default function () {
 	// component logic
@@ -27,6 +27,45 @@ export default function () {
 				iconR={FaInfo}
 				label={topLabel}
 			/>
+			<article className="flex flex-1 flex-col-reverse gap-10 overflow-y-scroll">
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
+					exercitationem voluptates natus! Quas, nihil unde adipisci sit sequi
+					officiis perspiciatis quibusdam voluptates alias, error nulla vitae. Alias
+					provident culpa cupiditate.
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
+					exercitationem voluptates natus! Quas, nihil unde adipisci sit sequi
+					officiis perspiciatis quibusdam voluptates alias, error nulla vitae. Alias
+					provident culpa cupiditate.
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
+					exercitationem voluptates natus! Quas, nihil unde adipisci sit sequi
+					officiis perspiciatis quibusdam voluptates alias, error nulla vitae. Alias
+					provident culpa cupiditate.
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
+					exercitationem voluptates natus! Quas, nihil unde adipisci sit sequi
+					officiis perspiciatis quibusdam voluptates alias, error nulla vitae. Alias
+					provident culpa cupiditate.
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
+					exercitationem voluptates natus! Quas, nihil unde adipisci sit sequi
+					officiis perspiciatis quibusdam voluptates alias, error nulla vitae. Alias
+					provident culpa cupiditate.
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
+					exercitationem voluptates natus! Quas, nihil unde adipisci sit sequi
+					officiis perspiciatis quibusdam voluptates alias, error nulla vitae. Alias
+					provident culpa cupiditate.
+				</p>
+			</article>
+			<BillInputComponent action={() => {}} />
 		</>
 	);
 }
