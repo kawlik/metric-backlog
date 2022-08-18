@@ -9,18 +9,22 @@ export default function (props: {
 	iconR: IconType;
 	label: string;
 	skipL?: boolean;
+	skipR?: boolean;
 }) {
 	// component logic
 
 	// component layout
 	return (
-		<header className="bg-white px-3 py-4 z-30 flex flex-nowrap justify-between content-center shadow-md">
+		<header className="bg-white px-3 py-4 z-30 flex flex-nowrap justify-between content-center">
 			<Collapse
 				collapse={!!props?.skipL}
 				element={<ButtonIconComponent action={props.actionL} icon={props.iconL} />}
 			/>
 			<span className="capitalize my-auto text-lg font-semibold">{props.label}</span>
-			<ButtonIconComponent action={props.actionR} icon={props.iconR} />
+			<Collapse
+				collapse={!!props?.skipR}
+				element={<ButtonIconComponent action={props.actionR} icon={props.iconR} />}
+			/>
 		</header>
 	);
 }

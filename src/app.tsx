@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { BillsPage, NewsPage, ProfilePage, ReportsPage } from './pages/@';
-import { HomeScreen } from './screens/@';
+import { BillScreen, HomeScreen } from './screens/@';
 
 export default function () {
 	// component logic
@@ -10,6 +10,9 @@ export default function () {
 		<Routes>
 			{/* default fallback */}
 			<Route path="*" element={<Navigate to="bills" />} />
+
+			{/* dedicated screen */}
+			<Route path="bill/:billID" element={<BillScreen />} />
 
 			{/* home screen */}
 			<Route path="*" element={<HomeScreen />}>
