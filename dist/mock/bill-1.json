@@ -1,0 +1,39 @@
+{
+    "id": "1",
+    "bills": [
+        {
+            "date": "18.08.2022",
+            "price": 12,
+            "title": "Some expense 1",
+            "type": "Type 1",
+            "user": "User 1"
+        },
+        {
+            "date": "18.08.2022",
+            "price": 23,
+            "title": "Some expense 2",
+            "type": "Type 2",
+            "user": "User 2"
+        },
+        {
+            "date": "18.08.2022",
+            "price": 31,
+            "title": "Some expense 3",
+            "type": "Type 3",
+            "user": "User 3"
+        },
+        {
+            "date": "18.08.2022",
+            "price": 32,
+            "title": "Some expense 4",
+            "type": "Type 1",
+            "user": "User 2"
+        }
+    ],
+    "participants": [
+        "User 1",
+        "User 2",
+        "User 3"
+    ],
+    "title": "Bill 1 custom title"
+}
