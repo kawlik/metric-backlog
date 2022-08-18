@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import {
 	BackgroundMessageComponent,
 	BillsListComponent,
@@ -9,7 +9,6 @@ import { BillType } from '../types/@';
 
 export default function () {
 	// component logic
-	const location = useLocation();
 	const navigate = useNavigate();
 
 	const [bills, setBills] = useState<BillType[]>([]);
