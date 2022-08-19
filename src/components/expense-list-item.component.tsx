@@ -1,14 +1,13 @@
 import { FaDollarSign } from 'react-icons/fa';
 import { AvatarIconComponent } from './@';
 import { Expande } from './utils/@';
-import Collapse from './utils/collapse';
 
 export default function (props: {
-	date?: string;
-	price?: number;
-	title?: string;
-	type?: string;
-	user?: string;
+	date: string;
+	price: number;
+	title: string;
+	type: string;
+	user: string;
 }) {
 	// component logic
 	const isMine = !!Math.round(Math.random());

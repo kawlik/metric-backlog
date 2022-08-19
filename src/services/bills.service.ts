@@ -1,9 +1,10 @@
-import { BehaviorSubject, interval, Observable, timer } from 'rxjs';
-import { BillType } from '../types/@';
+import { BehaviorSubject, Observable, map, timer } from 'rxjs';
+import { ajax } from 'rxjs/ajax';
+import { BillType, ExpenseType } from '../types/@';
 
 class Service {
 	private bills$ = new BehaviorSubject<BillType[]>([]);
-    private bill$ = new BehaviorSubject<BillType|null>(null);
+	private expenses$ = new BehaviorSubject<ExpenseType[]>([]);
 
 	constructor() {
 		timer(0, 10000).subscribe({
@@ -18,8 +19,20 @@ class Service {
 		return this.bills$;
 	}
 
-    getBill(billID: string): Observable<BillType|null> {
-		return this.bill$;
+	getExpenses(): Observable<ExpenseType[]> {
+		return this.expenses$;
+	}
+
+	getBill(billID: string): Observable<BillType> {
+		return ajax.getJSON<BillType & { bills?: ExpenseType[] }>(`mock/bill-${1}.json`).pipe(
+			map((res) => {
+				this.expenses$.next(res?.bills || []);
+
+				delete res.bills;
+
+				return res;
+			}),
+		);
 	}
 }
 

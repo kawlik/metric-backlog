@@ -1,5 +1,6 @@
 export default interface expense {
-	date: string;
+    date: string;
+    id:  string,
 	price: number;
 	title: string;
 	type: string;

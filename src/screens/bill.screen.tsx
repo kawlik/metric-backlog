@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { FaArrowLeft, FaInfo } from 'react-icons/fa';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { BillInputComponent, ExpenseListItemComponent, TopBarComponent } from '../components/@';
+import { BillInputComponent, ExpenseListComponent, ExpenseListItemComponent, TopBarComponent } from '../components/@';
+import { BillsService } from '../services/@';
 import { BillType, ExpenseType } from '../types/@';
 
 export default function () {
@@ -22,20 +23,13 @@ export default function () {
 
 	// initial update
 	useEffect(() => {
-		fetch(`mock/bill-${billID}.json`)
-			.then((res) => res.json())
-			.then((res) => {
-				const _expenses = res.bills as ExpenseType[];
-				const _billData = {
-					id: res.id,
-					participants: res.participanrs,
-					timestamp: res.timestamp,
-					title: res.title,
-				} as BillType;
+		BillsService.getBill(billID).subscribe({
+			next: (payload) => setBillData(payload),
+		});
 
-				setBillData(_billData);
-				setExpenses(_expenses);
-			});
+		BillsService.getExpenses().subscribe({
+			next: (payload) => setExpenses(payload),
+		});
 	}, []);
 
 	// component layout
@@ -48,20 +42,7 @@ export default function () {
 				iconR={FaInfo}
 				label={billData?.title || ''}
 			/>
-			<article className="flex flex-1 flex-col-reverse gap-2 overflow-y-scroll">
-				<ExpenseListItemComponent />
-				<ExpenseListItemComponent />
-				<ExpenseListItemComponent />
-				<ExpenseListItemComponent />
-				<ExpenseListItemComponent />
-				<ExpenseListItemComponent />
-				<ExpenseListItemComponent />
-				<ExpenseListItemComponent />
-				<ExpenseListItemComponent />
-				<ExpenseListItemComponent />
-				<ExpenseListItemComponent />
-				<ExpenseListItemComponent />
-			</article>
+			<ExpenseListComponent expenses={expenses} />
 			<BillInputComponent action={() => {}} />
 		</>
 	);
