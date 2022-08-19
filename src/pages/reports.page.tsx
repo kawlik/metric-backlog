@@ -1,6 +1,8 @@
+import { BackgroundMessageComponent } from "../components/@";
+
 export default function () {
 	// component logic
 
 	// component layout
-	return <>Hello React! - Reports</>;
+	return <BackgroundMessageComponent label="Nothing here so far" />;
 }
