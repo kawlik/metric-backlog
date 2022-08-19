@@ -5,12 +5,14 @@ import {
 	BillsListComponent,
 	SearchBarComponent,
 } from '../components/@';
+import { BillsService } from '../services/@';
 import { BillType } from '../types/@';
 
 export default function () {
 	// component logic
 	const navigate = useNavigate();
 
+	// define state
 	const [bills, setBills] = useState<BillType[]>([]);
 
 	// action:BillsListComponent
@@ -18,11 +20,11 @@ export default function () {
 		navigate(`/bill/${billID}`);
 	};
 
-	// initial update
+	// update state
 	useEffect(() => {
-		fetch('mock/bills.json')
-			.then((res) => res.json())
-			.then((res: BillType[]) => setBills(res));
+		BillsService.getBills().subscribe({
+			next: (payload) => setBills(payload),
+		});
 	}, []);
 
 	// component layout
