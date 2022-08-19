@@ -3,6 +3,7 @@
     "bills": [
         {
             "date": "18.08.2022",
+            "id": "1",
             "price": 12,
             "title": "Some expense 1",
             "type": "Type 1",
@@ -10,6 +11,7 @@
         },
         {
             "date": "18.08.2022",
+            "id": "2",
             "price": 23,
             "title": "Some expense 2",
             "type": "Type 2",
@@ -17,6 +19,7 @@
         },
         {
             "date": "18.08.2022",
+            "id": "3",
             "price": 31,
             "title": "Some expense 3",
             "type": "Type 3",
@@ -24,6 +27,7 @@
         },
         {
             "date": "18.08.2022",
+            "id": "4",
             "price": 32,
             "title": "Some expense 4",
             "type": "Type 1",
