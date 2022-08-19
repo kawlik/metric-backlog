@@ -1,10 +1,12 @@
+export { default as AvatarIconComponent } from './avatar-icon.component';
 export { default as BackgroundMessageComponent } from './background-message.component';
 export { default as BillInputComponent } from './bill-input.component';
-export { default as BillListViewComponent } from './bill-list-view.component';
+export { default as BillListItemComponent } from './bill-list-item.component';
 export { default as BillsListComponent } from './bills-list.component';
 export { default as ButtonIconExposedComponent } from './button-icon-exposed.component';
 export { default as ButtonIconLabelComponent } from './button-icon-label.component';
 export { default as ButtonIconComponent } from './button-icon.component';
+export { default as ExpenseListItemComponent } from './expense-list-item.component';
 export { default as PageSelectorComponent } from './page-selector.component';
 export { default as RegularInputComponent } from './regular-input.component';
 export { default as RegularSelectComponent } from './regular-select.component';
