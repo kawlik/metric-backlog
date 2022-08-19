@@ -24,15 +24,17 @@ class Service {
 	}
 
 	getBill(billID: string): Observable<BillType> {
-		return ajax.getJSON<BillType & { bills?: ExpenseType[] }>(`mock/bill-${1}.json`).pipe(
-			map((res) => {
-				this.expenses$.next(res?.bills || []);
+		return ajax
+			.getJSON<BillType & { bills?: ExpenseType[] }>(`mock/bill-${billID}.json`)
+			.pipe(
+				map((res) => {
+					this.expenses$.next(res?.bills || []);
 
-				delete res.bills;
+					delete res.bills;
 
-				return res;
-			}),
-		);
+					return res;
+				}),
+			);
 	}
 }
 

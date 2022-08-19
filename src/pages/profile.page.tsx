@@ -1,4 +1,4 @@
-import { BackgroundMessageComponent } from "../components/@";
+import { BackgroundMessageComponent } from '../components/@';
 
 export default function () {
 	// component logic

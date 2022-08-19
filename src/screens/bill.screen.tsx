@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { FaArrowLeft, FaInfo } from 'react-icons/fa';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { BillInputComponent, ExpenseListComponent, ExpenseListItemComponent, TopBarComponent } from '../components/@';
+import { BillInputComponent, ExpenseListComponent, TopBarComponent } from '../components/@';
 import { BillsService } from '../services/@';
 import { BillType, ExpenseType } from '../types/@';
 

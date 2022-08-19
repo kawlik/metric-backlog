@@ -1,6 +1,6 @@
 import { FaDollarSign } from 'react-icons/fa';
 import { AvatarIconComponent } from './@';
-import { Expande } from './utils/@';
+import { Expand } from './utils/@';
 
 export default function (props: {
 	date: string;
@@ -15,14 +15,16 @@ export default function (props: {
 	// component layout
 	return (
 		<div className="flex flex-nowrap gap-2 px-3">
-			{isMine ? <AvatarIconComponent icon={FaDollarSign} /> : <Expande expande={true} />}
-			<div className="backdrop-blur-lg bg-gray-400 bg-opacity-20 p-2 rounded-md">
-				{'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero aut porro a provident. Aut facere odit, eius voluptatem omnis molestias libero veniam tempore odio, ut vel voluptates, similique placeat quia.'.slice(
-					0,
-					Math.floor(Math.random() * 204) + 1,
-				)}
+			{!isMine ? <AvatarIconComponent icon={FaDollarSign} /> : <Expand expand={true} />}
+			<div className="backdrop-blur-lg bg-gray-400 bg-opacity-20 leading-none p-2 rounded-md">
+				<p className={`font-thin mb-2 ${isMine ? 'text-right' : 'text-lef'}`}>
+					{props.title}
+				</p>
+				<p className={`font-bold font-mono ${isMine ? 'text-right' : 'text-lef'}`}>
+					{props.price.toFixed(2)}
+				</p>
 			</div>
-			{!isMine ? <AvatarIconComponent icon={FaDollarSign} /> : <Expande expande={true} />}
+			{isMine ? <AvatarIconComponent icon={FaDollarSign} /> : <Expand expand={true} />}
 		</div>
 	);
 }
