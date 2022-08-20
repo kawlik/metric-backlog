@@ -4,7 +4,7 @@ export default function (props: { action(): void; placeholder: string; type: str
 	// component layout
 	return (
 		<input
-			className="bg-gray-200 flex-1 px-4 py-2 rounded-md"
+			className="bg-gray-400 bg-opacity-20 flex-1 px-4 py-2 rounded-md"
 			placeholder={props.placeholder}
 			type={props.type}
 		/>

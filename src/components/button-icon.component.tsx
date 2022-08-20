@@ -7,7 +7,7 @@ export default function (props: { action(): void; icon: IconType }) {
 	return (
 		<button
 			onClick={props.action}
-			className="bg-gray-200 p-2 rounded-md w-8 active:scale-95"
+			className="bg-gray-400 bg-opacity-20 p-2 rounded-md w-8 active:scale-95"
 		>
 			<props.icon />
 		</button>

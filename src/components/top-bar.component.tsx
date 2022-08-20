@@ -15,7 +15,7 @@ export default function (props: {
 
 	// component layout
 	return (
-		<header className="bg-white px-3 py-4 z-30 flex flex-nowrap justify-between content-center">
+		<header className=" px-3 py-4 z-30 flex flex-nowrap justify-between content-center">
 			<Collapse
 				collapse={!!props?.skipL}
 				element={<ButtonIconComponent action={props.actionL} icon={props.iconL} />}
