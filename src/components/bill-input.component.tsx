@@ -1,16 +1,51 @@
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import { FaArrowDown, FaArrowUp, FaPaperPlane, FaTrashAlt } from 'react-icons/fa';
 import { ButtonIconComponent, RegularInputComponent, RegularSelectComponent } from './@';
 import { Hide } from './utils/@';
 
 export default function (props: { action(): void }) {
 	// component logic
-	const [hiden, setHiden] = useState<boolean>(true);
+	const [isHiden, setIsHiden] = useState<boolean>(true);
 
 	// new bill data from input
-	const [billPrice, setBillPrice] = useState<number>(0);
+	const [billPrice, setBillPrice] = useState<string>('');
 	const [billTitle, setBillTitle] = useState<string>('');
 	const [billType, setBillType] = useState<string>('');
+
+	// action:RegularInputComponent
+	const expandBillInput = () => {
+		setIsHiden(false);
+	};
+
+	const registerOnUpdateCallback = (callback: any) => {
+		return (event: FormEvent<HTMLInputElement>) => {
+			callback(event.currentTarget.value);
+		};
+	};
+
+	// action:RegularSelectComponent
+	const registerOnSelectCallback = (callback: any) => {
+		return (event: FormEvent<HTMLSelectElement>) => {
+			callback(event.currentTarget.value);
+		};
+	};
+
+    // action:CLEAR
+    const clearAndHide = () => {
+        setBillPrice('');
+        setBillTitle('');
+        setBillType('');
+
+        // hide input
+        setIsHiden(true);
+    }
+
+    // action:SEND
+    const sendAndHide = () => {
+
+        // clear values and hide
+        clearAndHide();
+    };
 
 	// component layout
 	return (
@@ -21,36 +56,42 @@ export default function (props: { action(): void }) {
 					<>
 						<section className="flex flex-1 gap-2">
 							<RegularInputComponent
-								action={() => {}}
+								actionOnChange={registerOnUpdateCallback(setBillTitle)}
+								actionOnFocus={expandBillInput}
 								placeholder="✨ Expense"
 								type="text"
+								value={billTitle}
 							/>
 							<ButtonIconComponent
-								action={() => setHiden(!hiden)}
-								icon={hiden ? FaArrowUp : FaArrowDown}
+								action={() => setIsHiden(!isHiden)}
+								icon={isHiden ? FaArrowUp : FaArrowDown}
 							/>
 						</section>
 					</>
 				}
 			/>
 			<Hide
-				hide={hiden}
+				hide={isHiden}
 				element={
 					<>
 						<section className="flex flex-1 gap-2">
 							<RegularInputComponent
-								action={() => {}}
+								actionOnChange={registerOnUpdateCallback(setBillPrice)}
+								actionOnFocus={expandBillInput}
 								placeholder="💰 Price"
 								type="number"
+								value={billPrice}
 							/>
-							<ButtonIconComponent action={() => {}} icon={FaPaperPlane} />
+							<ButtonIconComponent action={sendAndHide} icon={FaPaperPlane} />
 						</section>
 						<section className="flex flex-1 gap-2">
 							<RegularSelectComponent
-								action={() => {}}
+								actionOnSelect={registerOnSelectCallback(setBillType)}
 								options={['Option 1', 'Option 2', 'Option 3']}
+                                placeholder='📊 Type'
+								value={billType}
 							/>
-							<ButtonIconComponent action={() => {}} icon={FaTrashAlt} />
+							<ButtonIconComponent action={clearAndHide} icon={FaTrashAlt} />
 						</section>
 					</>
 				}

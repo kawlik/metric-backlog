@@ -20,9 +20,7 @@ export default function (props: {
 				<p className="text-sm w-max">{props.participants.join(', ')}</p>
 			</div>
 			<div className="my-auto">
-				<p className="font-light italic text-xs w-max">
-					{props.timestamp}
-				</p>
+				<p className="font-light italic text-xs w-max">{props.timestamp}</p>
 			</div>
 		</button>
 	);
