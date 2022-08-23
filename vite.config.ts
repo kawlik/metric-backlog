@@ -15,8 +15,8 @@ export default defineConfig({
 				name: 'metric',
 				short_name: 'metric',
 				description: 'Metric - PWA expense management app!',
-				theme_color: '#ffffff',
-				background_color: '#ffffff',
+				theme_color: '#FFFFFF',
+				background_color: '#FFFFFF',
 				orientation: 'portrait',
 				display: 'standalone',
 				icons: [

@@ -16,11 +16,11 @@ export default function (props: {
 				<FaStar className="text-3xl text-green-500" />
 			</div>
 			<div className="flex-1 my-auto overflow-hidden">
-				<p className="font-bold text-gray-800 w-max">{props.title}</p>
-				<p className="text-sm text-gray-600 w-max">{props.participants.join(', ')}</p>
+				<p className="font-bold w-max">{props.title}</p>
+				<p className="text-sm w-max">{props.participants.join(', ')}</p>
 			</div>
 			<div className="my-auto">
-				<p className="font-light italic text-gray-600 text-xs w-max">
+				<p className="font-light italic text-xs w-max">
 					{props.timestamp}
 				</p>
 			</div>

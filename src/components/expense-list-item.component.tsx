@@ -17,7 +17,7 @@ export default function (props: {
 		<div className="flex flex-nowrap gap-2 px-3">
 			{!isMine ? <AvatarIconComponent icon={FaDollarSign} /> : <Expand expand={true} />}
 			<div className="bg-gray-400 bg-opacity-20 leading-none p-2 rounded-md">
-				<p className={`font-thin mb-2 ${isMine ? 'text-right' : 'text-lef'}`}>
+				<p className={`font-semibold mb-2 ${isMine ? 'text-right' : 'text-lef'}`}>
 					{props.title}
 				</p>
 				<p className={`font-bold font-mono ${isMine ? 'text-right' : 'text-lef'}`}>
