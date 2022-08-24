@@ -1,6 +1,7 @@
 import { FaArrowLeft, FaBell, FaInfo, FaPaperclip, FaUser, FaWallet } from 'react-icons/fa';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { PageSelectorComponent, TopBarComponent } from '../components/@';
+import { AuthService } from '../services/@';
 
 export default function () {
 	// component logic
@@ -20,7 +21,7 @@ export default function () {
 
 	// actions:TopBarComponent
 	const goBack = () => navigate(-1);
-	const goInfo = () => {};
+	const goInfo = () => AuthService.logout();
 
 	// component layout
 	return (

@@ -12,7 +12,6 @@ export default function (props: { children: JSX.Element | JSX.Element[] }) {
 		AuthService.user$.subscribe({
 			next: (user) => setUser(user),
 		});
-		AuthService.signInAnonymously();
 	}, []);
 
 	// component layout
