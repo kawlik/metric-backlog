@@ -7,8 +7,6 @@ export default function (props: { children: JSX.Element | JSX.Element[] }) {
 	// component logic
 	const [user, setUser] = useState<User | null>(null);
 
-	console.log(user);
-
 	// update state
 	useEffect(() => {
 		AuthService.user$.subscribe({

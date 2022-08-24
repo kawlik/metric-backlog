@@ -1,7 +1,7 @@
 import { getAuth, onAuthStateChanged, User } from 'firebase/auth';
 import { BehaviorSubject } from 'rxjs';
 import { AuthService } from './@';
-import { FirebaseServiceConfig } from './configs/@';
+import { FirebaseServiceConfig } from '../configs/@';
 
 // define service
 class Service {
