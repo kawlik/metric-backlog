@@ -21,7 +21,7 @@ export default function () {
 	const goBack = () => navigate(-1);
 	const goInfo = () => {};
 
-	// initial update
+	// update state
 	useEffect(() => {
 		BillsService.getBill(billID).subscribe({
 			next: (payload) => setBillData(payload),

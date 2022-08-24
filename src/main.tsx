@@ -8,13 +8,16 @@ import { registerSW } from 'virtual:pwa-register';
 
 // app stylesheet
 import './style.css';
+import { AtuhProvider } from './contexts/@';
 
 // app initialization
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 	<React.StrictMode>
-		<HashRouter>
-			<App />
-		</HashRouter>
+		<AtuhProvider>
+			<HashRouter>
+				<App />
+			</HashRouter>
+		</AtuhProvider>
 	</React.StrictMode>,
 );
 

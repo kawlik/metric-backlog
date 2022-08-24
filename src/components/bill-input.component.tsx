@@ -30,22 +30,21 @@ export default function (props: { action(): void }) {
 		};
 	};
 
-    // action:CLEAR
-    const clearAndHide = () => {
-        setBillPrice('');
-        setBillTitle('');
-        setBillType('');
+	// action:CLEAR
+	const clearAndHide = () => {
+		setBillPrice('');
+		setBillTitle('');
+		setBillType('');
 
-        // hide input
-        setIsHiden(true);
-    }
+		// hide input
+		setIsHiden(true);
+	};
 
-    // action:SEND
-    const sendAndHide = () => {
-
-        // clear values and hide
-        clearAndHide();
-    };
+	// action:SEND
+	const sendAndHide = () => {
+		// clear values and hide
+		clearAndHide();
+	};
 
 	// component layout
 	return (
@@ -88,7 +87,7 @@ export default function (props: { action(): void }) {
 							<RegularSelectComponent
 								actionOnSelect={registerOnSelectCallback(setBillType)}
 								options={['Option 1', 'Option 2', 'Option 3']}
-                                placeholder='📊 Type'
+								placeholder="📊 Type"
 								value={billType}
 							/>
 							<ButtonIconComponent action={clearAndHide} icon={FaTrashAlt} />
