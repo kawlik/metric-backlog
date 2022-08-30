@@ -7,11 +7,14 @@ export default function () {
 
 	// component layout
 	return (
-		<div className='flex flex-1 flex-col justify-center p-3'>
-            <div className='flex gap-2'>
-                <RegularInputComponent placeholder='SignIn Anonymously' type='text' value='' />
-                <ButtonIconComponent action={AuthService.signInAnonymously} icon={FaUserSecret} />
-            </div>
+		<div className="flex flex-1 flex-col justify-center p-3">
+			<div className="flex gap-2">
+				<RegularInputComponent placeholder="SignIn Anonymously" type="text" value="" />
+				<ButtonIconComponent
+					action={AuthService.signInAnonymously}
+					icon={FaUserSecret}
+				/>
+			</div>
 		</div>
 	);
 }
